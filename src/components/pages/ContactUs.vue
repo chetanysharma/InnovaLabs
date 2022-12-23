@@ -2,7 +2,7 @@
   <div id="contact">
       <div id="container">
           <div class="row centerHeading">
-              <h5>Guest list is not store anywhere</h5>
+              <h5>Guests list is not store anywhere</h5>
               <h6>Here we understand the use of eventbus to implement child to child communication</h6>
           </div>
           <div class="row">
