@@ -1,6 +1,6 @@
 <template>
   <div id="Table">
-    <h2>Users List</h2>
+    <h2 class="centerHeading">Users List</h2>
     <div class="container">
       <div class="row">
         <div class="col">
@@ -93,5 +93,10 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style scoped>
+.centerHeading {
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
 </style>
