@@ -13,7 +13,7 @@
             :id="element.token"
             :checked="element.props.default || false"
             :aria-describedby="element.token"
-            :required="element.props.required || false"
+            :required="element.type === 'date' && form['IS_PERSON_MINOR'] ? true : element.props.required"
             :placeholder="element.props.placeholder || ''"
           />
         </div>

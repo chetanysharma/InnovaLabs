@@ -4,17 +4,6 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <select
-            class="form-select"
-            aria-label=".form-select-sm example"
-            v-model="column"
-            @change="$emit('searchColumnName',column)"
-          >
-            <option value="">Select Column to Search</option>
-            <option v-for="column in columns" :key="column" :value="column">{{column}}</option>
-          </select>
-        </div>
-        <div class="col">
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Search</span>
             <input

@@ -27,7 +27,7 @@ export default createStore({
                 type: 'date',
                 props: {
                     title: 'Enter your DOB',
-                    required: 'IS_PERSON_MINOR',
+                    required: false,
                     placeholder: 'e.g. 01/01/2000'
                 }
             }

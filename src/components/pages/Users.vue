@@ -1,6 +1,6 @@
 <template>
   <div id="table">
-    <Table v-if="users && users.length" :values="users" :filterData="filterData" @search="searchItem" @searchColumnName="searchColumnName" />
+    <Table v-if="users && users.length" :values="users" :filterData="filterData" @search="searchItem"/>
   </div>
 </template>
 
@@ -17,7 +17,6 @@ export default defineComponent({
   setup() {
     const store = useStore();
     const filterData = ref([]);
-    const column = ref('');
     const users = computed(() => {
       return store.getters.getUsers;
     });
@@ -27,23 +26,18 @@ export default defineComponent({
       store.dispatch("setUsers", response);
     });
 
-    const searchColumnName = (searchColumn) => {
-      console.log('searchName', searchColumn)
-      column.value = searchColumn
-    }
-
     const searchItem = (search) => {
       if (!users.value.length) {
         return []
       }
       
       filterData.value = users.value.filter(item => {
-        return search.toLowerCase().split(' ').every(v => item[column.value || 'name'].toLowerCase().includes(v))
+        return search.toLowerCase().split(' ').every(v => item['name'].toLowerCase().includes(v) || item['email'].toLowerCase().includes(v) || item['username'].toLowerCase().includes(v) || item['website'].toLowerCase().includes(v))
       })
 
     }
 
-    return { users, searchItem, filterData, searchColumnName  };
+    return { users, searchItem, filterData  };
   },
 });
 </script>
